@@ -4,15 +4,12 @@ from bs4 import BeautifulSoup
 import webbrowser
  
 
-def main():
 
 
-
-    MPM = r'MPM012390529'
-    issueCatgory = 'Swiper'
-    issueDescription = "This is a test"
-
-
+def createRMA(MPM, issueCatgory, issueDescription):
+    #MPM = r'MPM012390529'
+    #issueCatgory = 'Swiper'
+    #issueDescription = "This is a test"
     signInurl = 'https://www.mycryptopay.com/devel/genesys/'
     RMAurl = 'https://www.mycryptopay.com/devel/genesys/index.php?page=newticket&siteid=' + MPM
     loginInfo = {'username': 'config.username',
@@ -23,9 +20,6 @@ def main():
                        'category': 'NR |',
                        'description': issueDescription,
                        'submit_newticket': ''}
-
-
-
 
     '''
     r_html = r.text
@@ -52,7 +46,7 @@ def main():
     print(r.url)
 
 
-main()
+
 
 
 
