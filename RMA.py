@@ -1,8 +1,7 @@
 import requests
-#import selenium
 from bs4 import BeautifulSoup
 import webbrowser
- 
+import config
 
 
 
@@ -12,8 +11,8 @@ def createRMA(MPM, issueCatgory, issueDescription):
     #issueDescription = "This is a test"
     signInurl = 'https://www.mycryptopay.com/devel/genesys/'
     RMAurl = 'https://www.mycryptopay.com/devel/genesys/index.php?page=newticket&siteid=' + MPM
-    loginInfo = {'username': 'config.username',
-               'password': 'config.password',
+    loginInfo = {'username': config.username,
+               'password': config.password,
                'submit_login': ''}
     createNewTicket = {'siteid': MPM,
                        'catagory': issueCatgory,
@@ -73,7 +72,7 @@ def createRMA(MPM, issueCatgory, issueDescription):
     print(o.url)
 
     print(r.history)
-    
+
     print("\n\n\n\n")
 
 
@@ -85,10 +84,7 @@ def createRMA(MPM, issueCatgory, issueDescription):
         print(r.status_code, r.url)
     else:
         print("Request was not redirected")
-    
+
 
     r = requests.post(url, data=siteMPM)
 '''
-
-
-
